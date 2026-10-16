@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Diario del Amor - Edición Especial</title>
+  
+  <!-- Tipografías vintage de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="newspaper-container">
+    
+    <!-- ENCABEZADO VINTAGE -->
+    <header class="newspaper-header">
+      <div class="header-top">EDICIÓN ESPECIAL • 7 MESES JUNTOS • VOL. I</div>
+      <h1>EL DIARIO DEL AMOR</h1>
+      <div class="header-bottom">
+        <span>Precio: Un abrazo</span>
+        <span>Publicación de Aniversario</span>
+        <span>Edición Limitada</span>
+      </div>
+    </header>
+
+    <!-- PÁGINA 1: PORTADA -->
+    <section id="page-1" class="page active-page">
+      <h2 class="main-title">¡CELEBRAMOS 7 MESES JUNTOS!</h2>
+      <div class="cover-content">
+        <div class="photo-box">
+          <!-- Cambia foto_nosotros.jpg por tu foto -->
+          <img src="foto_nosotros.jpg" alt="Foto juntos" class="newspaper-photo">
+          <p class="photo-caption">Nuestra foto favorita celebrando este camino juntos.</p>
+        </div>
+        <div class="article">
+          <p class="first-letter">E</p>
+          <p>ste periódico ha sido impreso de manera especial para conmemorar siete meses llenos de risas, momentos inolvidables y mucho amor.</p>
+          <p>Navega por sus páginas para leer la editorial de la fecha, revisar los clasificados del día y poner a prueba tus habilidades en la sección de pasatiempos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 2: CARTA DE AMOR -->
+    <section id="page-2" class="page">
+      <h2 class="section-title">EDITORIAL: CARTA DE AMOR</h2>
+      <div class="love-letter">
+        <p>Querido [Nombre de tu novio],</p>
+        <p>Aquí puedes escribir todo tu texto lindo. Esta sección tiene un estilo de tipografía retro tipo máquina de escribir o editorial clásica para que resalte mucho.</p>
+        <p>¡Puedes personalizar este espacio con todos los párrafos que quieras!</p>
+        <p class="signature">Con todo mi amor,<br>Maria</p>
+      </div>
+    </section>
+
+    <!-- PÁGINA 3: CLASIFICADOS -->
+    <section id="page-3" class="page">
+      <h2 class="section-title">CLASIFICADOS DEL DÍA</h2>
+      <div class="classifieds-grid">
+        <div class="ad-box">
+          <h3>SE BUSCA NOVIO</h3>
+          <p>Trabajador, cariñoso y detallista. Recompensa: Abrazos ilimitados, compañía para ver películas y mucho amor todos los días.</p>
+        </div>
+        <div class="ad-box">
+          <h3>SE OFRECE</h3>
+          <p>Compañera oficial para picnics, paseos y escuchar música. Disponibilidad inmediata 24/7.</p>
+        </div>
+        <div class="ad-box">
+          <h3>SE RENTA</h3>
+          <p>Espacio en el corazón para guardar los mejores recuerdos de estos 7 meses y los que faltan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 4: JUEGOS -->
+    <section id="page-4" class="page">
+      <h2 class="section-title">PASATIEMPOS Y JUEGOS</h2>
+      <p class="sub-text">Sección interactiva: ¡Demuestra qué tanto sabes de nosotros!</p>
+      
+      <div id="games-container">
+        <p><em>Aquí integraremos la Sopa de Letras, el Strands y el Ahorcado en los siguientes pasos.</em></p>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE PÁGINAS -->
+    <nav class="newspaper-nav">
+      <button id="prevBtn" class="nav-btn" onclick="changePage(-1)">← Anterior</button>
+      <span id="pageIndicator" class="page-num">Página 1 de 4</span>
+      <button id="nextBtn" class="nav-btn" onclick="changePage(1)">Siguiente →</button>
+    </nav>
+
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 4;
+
+    function changePage(direction) {
+      const newPage = currentPage + direction;
+      
+      if (newPage >= 1 && newPage <= totalPages) {
+        // Oculta página actual
+        document.getElementById(`page-${currentPage}`).classList.remove('active-page');
+        
+        // Actualiza contador
+        currentPage = newPage;
+        
+        // Muestra nueva página
+        document.getElementById(`page-${currentPage}`).classList.add('active-page');
+        
+        // Actualiza el texto indicador
+        document.getElementById('pageIndicator').textContent = `Página ${currentPage} de ${totalPages}`;
+        
+        // Estado de los botones
+        document.getElementById('prevBtn').disabled = (currentPage === 1);
+        document.getElementById('nextBtn').disabled = (currentPage === totalPages);
+      }
+    }
+
+    // Estado inicial de botones
+    document.getElementById('prevBtn').disabled = true;
+  </script>
+
+</body>
+</html>

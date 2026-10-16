@@ -1,0 +1,168 @@
+/* Estilos generales con tono retro */
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #e8e0d5; /* Fondo fuera del periódico */
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #2b2b2b;
+  display: flex;
+  justify-content: center;
+}
+
+.newspaper-container {
+  background-color: #f4efe6; /* Color de papel periódico vintage */
+  max-width: 700px;
+  width: 100%;
+  padding: 30px;
+  border: 1px solid #b8b0a2;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ENCABEZADO */
+.newspaper-header {
+  text-align: center;
+  border-bottom: 3px double #2b2b2b;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+}
+
+.header-top, .header-bottom {
+  font-family: 'Special Elite', cursive, monospace;
+  font-size: 0.85rem;
+  border-top: 1px solid #2b2b2b;
+  border-bottom: 1px solid #2b2b2b;
+  padding: 4px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newspaper-header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 10px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* PÁGINAS Y TRANSICIONES */
+.page {
+  display: none;
+  min-height: 380px;
+}
+
+.page.active-page {
+  display: block;
+}
+
+h2.main-title, h2.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  border-bottom: 1px solid #2b2b2b;
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+/* PORTADA */
+.cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.photo-box {
+  text-align: center;
+  border: 1px solid #2b2b2b;
+  padding: 8px;
+  background-color: #fff;
+  max-width: 320px;
+}
+
+.newspaper-photo {
+  width: 100%;
+  height: auto;
+  filter: sepia(30%) contrast(110%); /* Efecto foto antigua */
+}
+
+.photo-caption {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.first-letter {
+  float: left;
+  font-size: 3.2rem;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 8px;
+  font-weight: bold;
+}
+
+/* CARTA DE AMOR */
+.love-letter {
+  font-family: 'Special Elite', cursive, monospace;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  padding: 10px 20px;
+}
+
+.signature {
+  text-align: right;
+  margin-top: 25px;
+}
+
+/* CLASIFICADOS */
+.classifieds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.ad-box {
+  border: 1px dashed #2b2b2b;
+  padding: 12px;
+  background-color: #eae3d8;
+}
+
+.ad-box h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+/* NAVEGACIÓN CON FLECHAS */
+.newspaper-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 2px solid #2b2b2b;
+}
+
+.nav-btn {
+  font-family: 'Special Elite', cursive, monospace;
+  background: #2b2b2b;
+  color: #f4efe6;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #555;
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-num {
+  font-family: 'Special Elite', cursive, monospace;
+  font-size: 0.9rem;
+}
